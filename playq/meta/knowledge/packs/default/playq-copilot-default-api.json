@@ -1,0 +1,42 @@
+{
+  "domain": "PlayQ-API",
+  "category": "PlayQ API Automation",
+  "description": "Knowledge base of PlayQ default API automation commands (core, non-addon) with syntax, description, and examples for Copilot-assisted test authoring.",
+  "commands": [
+    {
+      "name": "Call API",
+      "syntax": "Api: Call api -action:{string} -config:{string} -baseUrl:{string} -options:{json}",
+      "category": "Execution",
+      "description": "Executes a predefined API request using resources/api/{action}.api.ts and a config key. Handles variable substitution, headers, params, body, auth, timeouts, redirects, and expectedStatus validation. Options support maxTimeout, maxUrlRedirects, auth, toNumber, toBoolean.",
+      "example": "* Api: Call api -action:\"user\" -config:\"getUser\" -baseUrl:\"https://api.example.com\" -options:\"{\\\"userId\\\":\\\"123\\\",\\\"token\\\":\\\"${auth.token}\\\",\\\"maxTimeout\\\":8000}\""
+    },
+    {
+      "name": "Store Last Response Paths To Variables",
+      "syntax": "Api: Store last response paths to variables -paths:{string} -variables:{string}",
+      "category": "Extraction",
+      "description": "Maps multiple comma-separated response paths to variable names. Path prefixes: x./(body). for body (or none), h./(header). for headers, s/(status) for status code, t/(statusText) for status text. Supports array notation (e.g. data[0].id).",
+      "example": "* Api: Store last response paths to variables -paths:\"data[0].id,h.content-type,s,t\" -variables:\"var.userId,var.ct,var.status,var.statusText\""
+    },
+    {
+      "name": "Get Last Response Path Value",
+      "syntax": "Api: Get last response path value -path:{string}",
+      "category": "Extraction",
+      "description": "Returns a single value from the last response body using a body path (supports x. prefix and bracket notation). Intended for chaining in custom steps or scripts.",
+      "example": "* Api: Get last response path value -path:\"x.data[0].email\""
+    },
+    {
+      "name": "Verify Value",
+      "syntax": "Api: Verify value -actual:{string} -expected:{string} -options:{json}",
+      "category": "Verification",
+      "description": "Verifies an actual value (with variable substitution) equals expected. Options: assert (default true), partial_text (substring match).",
+      "example": "* Api: Verify value -actual:\"${var.status}\" -expected:\"200\" -options:\"{}\""
+    },
+    {
+      "name": "Verify Path Value In Last Response",
+      "syntax": "Api: Verify api path value in last response -path:{string} -expected:{string} -options:{json}",
+      "category": "Verification",
+      "description": "Extracts a value from last response (body/header/status/statusText) via flexible path prefixes (x., h., s, t) and compares to expected. Options: assert (default true), partial_text for substring.",
+      "example": "* Api: Verify api path value in last response -path:\"h.content-type\" -expected:\"application/json\" -options:\"{\\\"partial_text\\\":true}\""
+    }
+  ]
+}

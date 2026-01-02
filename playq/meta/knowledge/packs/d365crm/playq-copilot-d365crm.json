@@ -1,0 +1,168 @@
+{
+    "domain": "D365CRM",
+    "category": "Microsoft Dynamics 365 Customer Engagement Automation",
+    "description": "Knowledge base of PlayQ D365CRM automation commands with syntax, description, and examples for CoPilot-assisted test case authoring.",
+    "commands": [
+        {
+            "name": "Input Text",
+            "syntax": "D365CRM: Input Text -Field:{string} -Text:{string} -Options:{string}",
+            "category": "Input",
+            "description": "Fills a text field on a Dynamics CRM form using field label, name, or aria-label.",
+            "example": "* D365CRM: Input Text -Field:\"Title\" -Text:\"Network Outage\" -Options:\"\""
+        },
+        {
+            "name": "Input Date",
+            "syntax": "D365CRM: Input-Date -Field:{string} -Text:{string} -Options:{string}",
+            "category": "Input",
+            "description": "Sets a date value for a CRM date field. Accepts DD/MM/YYYY or locale-supported format.",
+            "example": "* D365CRM: Input-Date -Field:\"Due Date\" -Text:\"15/11/2025\" -Options:\"\""
+        },
+        {
+            "name": "Input Time",
+            "syntax": "D365CRM: Input-Time -Field:{string} -Text:{string} -Options:{string}",
+            "category": "Input",
+            "description": "Inputs a time value (e.g., 09:30 AM) into a CRM time field.",
+            "example": "* D365CRM: Input-Time -Field:\"Start Time\" -Text:\"09:30 AM\" -Options:\"\""
+        },
+        {
+            "name": "Input Lookup",
+            "syntax": "D365CRM: Input-Lookup -Field:{string} -Text:{string} -Options:{string}",
+            "category": "Input",
+            "description": "Searches and selects a record in a CRM lookup field.",
+            "example": "* D365CRM: Input-Lookup -Field:\"Customer\" -Text:\"Acme Corp\" -Options:\"\""
+        },
+        {
+            "name": "Input Lookup If Empty",
+            "syntax": "D365CRM: Input-Lookup-If-Empty -Field:{string} -Text:{string} -Options:{string}",
+            "category": "Input",
+            "description": "Populates a lookup field only if no value exists.",
+            "example": "* D365CRM: Input-Lookup-If-Empty -Field:\"Owner\" -Text:\"System Admin\" -Options:\"\""
+        },
+        {
+            "name": "Input Lookup By Clearing Value",
+            "syntax": "D365CRM: Input-Lookup -Field:{string} -Text:{string} -By-Clearing-Value:{string} -Options:{string}",
+            "category": "Input",
+            "description": "Clears any existing lookup value before setting a new one.",
+            "example": "* D365CRM: Input-Lookup -Field:\"Account\" -Text:\"Contoso\" -By-Clearing-Value:\"Old Account\" -Options:\"\""
+        },
+        {
+            "name": "Click Button",
+            "syntax": "D365CRM: Click-Button -Field:{string} -Options:{string}",
+            "category": "Click",
+            "description": "Clicks a button or command bar action based on its visible label or aria-label.",
+            "example": "* D365CRM: Click-Button -Field:\"Save\" -Options:\"\""
+        },
+        {
+            "name": "Click Tab",
+            "syntax": "D365CRM: Click-Tab -Text:{string} -Options:{string}",
+            "category": "Navigation",
+            "description": "Switches to a specific tab within a CRM form.",
+            "example": "* D365CRM: Click-Tab -Text:\"Details\" -Options:\"\""
+        },
+        {
+            "name": "Click Link",
+            "syntax": "D365CRM: Click-Link -Text:{string} -Options:{string}",
+            "category": "Navigation",
+            "description": "Clicks on a hyperlink or linked record by text value.",
+            "example": "* D365CRM: Click-Link -Text:\"Case 10045\" -Options:\"\""
+        },
+        {
+            "name": "Select Picklist",
+            "syntax": "D365CRM: Select -Field:{string} -Text:{string} -Options:{string}",
+            "category": "Select",
+            "description": "Chooses a value from a dropdown or picklist field.",
+            "example": "* D365CRM: Select -Field:\"Priority\" -Text:\"High\" -Options:\"\""
+        },
+        {
+            "name": "Select Multiple",
+            "syntax": "D365CRM: Select-Multiple -Field:{string} -Text:{string} -Options:{string}",
+            "category": "Select",
+            "description": "Selects multiple values from a multi-select picklist.",
+            "example": "* D365CRM: Select-Multiple -Field:\"Categories\" -Text:\"Finance, Support\" -Options:\"\""
+        },
+        {
+            "name": "Wait For Loader To Disappear",
+            "syntax": "D365CRM: Wait-For-Loader-To-Disappear -Options:{string}",
+            "category": "Wait",
+            "description": "Pauses until the Dynamics loader or busy indicator disappears.",
+            "example": "* D365CRM: Wait-For-Loader-To-Disappear -Options:\"timeout=10s\""
+        },
+        {
+            "name": "Wait And Verify Page Header",
+            "syntax": "D365CRM: Wait-And-Verify-Page-Header -Text:{string} -Options:{string}",
+            "category": "Wait",
+            "description": "Waits until the page header text matches the expected title.",
+            "example": "* D365CRM: Wait-And-Verify-Page-Header -Text:\"Case: Network Outage\" -Options:\"\""
+        },
+        {
+            "name": "Verify Input Value",
+            "syntax": "D365CRM: Verify-Input-Value -Field:{string} -Text:{string} -Options:{string}",
+            "category": "Verify",
+            "description": "Confirms that a field’s current value matches the expected text.",
+            "example": "* D365CRM: Verify-Input-Value -Field:\"Title\" -Text:\"Network Outage\" -Options:\"\""
+        },
+        {
+            "name": "Verify Field Mandatory",
+            "syntax": "D365CRM: Verify-field-mandatory -Field:{string} -Options:{string}",
+            "category": "Verify",
+            "description": "Checks if a field is marked as mandatory (red asterisk).",
+            "example": "* D365CRM: Verify-field-mandatory -Field:\"Customer\" -Options:\"\""
+        },
+        {
+            "name": "Verify Table Cell Value Contains",
+            "syntax": "D365CRM: Verify Table Cell Value Contains -Text:{string} -Row:{string} -Column:{string} -Options:{string}",
+            "category": "Verify",
+            "description": "Validates that a table cell contains specific text.",
+            "example": "* D365CRM: Verify Table Cell Value Contains -Text:\"Resolved\" -Row:\"1\" -Column:\"Status\" -Options:\"\""
+        },
+        {
+            "name": "Store Table Row Count",
+            "syntax": "D365CRM: Store Table Row Count -To-Variable:{string} -Options:{string}",
+            "category": "Store",
+            "description": "Stores the total number of rows in the current table into a variable.",
+            "example": "* D365CRM: Store Table Row Count -To-Variable:\"rowCount\" -Options:\"\""
+        },
+        {
+            "name": "Switch App",
+            "syntax": "D365CRM: Switch App -From:{string} -To:{string}",
+            "category": "Utility",
+            "description": "Switches between CRM applications, such as Sales → Customer Service.",
+            "example": "* D365CRM: Switch App -From:\"Sales\" -To:\"Customer Service\""
+        },
+        {
+            "name": "Upload File",
+            "syntax": "D365CRM: Upload-File -Filename:{string} -Options:{string}",
+            "category": "Utility",
+            "description": "Uploads a file attachment to the current CRM record form.",
+            "example": "* D365CRM: Upload File -Filename:\"error_screenshot.png\" -Options:\"\""
+        },
+        {
+            "name": "Click Left Menu",
+            "syntax": "D365CRM: Click Left Menu -Text:{string}",
+            "category": "Navigation",
+            "description": "Clicks a primary navigation item on the left menu, such as 'Service', 'Cases', or 'Accounts'.",
+            "example": "* D365CRM: Click Left Menu -Text:\"Service\""
+        },
+        {
+            "name": "Click Left Menu Then Sub Menu",
+            "syntax": "D365CRM: Click Left Menu -Text:{string} -Then-Sub-Menu -Text:{string}",
+            "category": "Navigation",
+            "description": "Clicks a left-side menu item and then a specific sub-menu entry beneath it.",
+            "example": "* D365CRM: Click-Left-Menu -Text:\"Service\" -Then-Sub-Menu -Text:\"Cases\""
+        },
+        {
+            "name": "Login using Microsoft SSO",
+            "syntax": "D365CRM: Login using Microsoft SSO -sessionName:{string} -url:{string} -username:{string} -password:{string} -options:{string}",
+            "category": "Session",
+            "description": "Performs login to Dynamics 365 CRM using Microsoft SSO. Opens a browser session with the given session name, navigates to the CRM URL, and authenticates using provided credentials or cached SSO. The 'options' parameter can include timeout, headless, or browser type.",
+            "example": "* D365CRM: Login using Microsoft SSO -sessionName:\"crmDemoSession\" -url:\"https://org.crm.dynamics.com\" -username:\"john.smith@contoso.com\" -password:\"P@ssw0rd\" -options:\"browser=chromium;headless=false\""
+        },
+        {
+            "name": "Logout",
+            "syntax": "D365CRM: Logout -Options:{string}",
+            "category": "Utility",
+            "description": "Logs out from the current Dynamics CRM session.",
+            "example": "* D365CRM: Logout -Options:\"\""
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+  "context": [
+    "PlayQ CoPilot is a domain-aware test authoring assistant.",
+    "It supports default PlayQ actions for web, API, and communication automation,",
+    "and domain-specific actions for Microsoft Dynamics 365 CRM."
+  ],
+  "default_pack": [
+    ".playqmeta/knowledge/packs/default/index.json"
+  ],
+  "addon_packs": [
+    ".playqmeta/knowledge/packs/d365crm/index.json"
+  ],
+  "loader": {
+    "auto_expand_indexes": true,
+    "supported_domains": ["default", "d365crm"]
+  },
+  "templates": {
+    "bdd": ".playqmeta/templates/testcase-bdd.md"
+  }
+}

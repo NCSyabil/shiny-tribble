@@ -1,0 +1,102 @@
+{
+  // --- GitHub Copilot Chat workspace context ---
+  "github.copilot.chat.workspaceContext.include": [
+    "playq/meta/knowledge/packs/**",
+    "playq/meta/templates/**",
+    ".github/copilot-instructions.md"
+  ],
+
+  // --- PlayQ / Cucumber configuration ---
+  // Location of all your .feature files
+  "cucumber.features": [
+    "tests/bdd/scenarios/**/*.feature",
+    "tests/bdd/step_group/*.sg.feature"
+  ],
+
+  // Locations where step definitions are found
+  "cucumber.glue": [
+    // Project-local step defs (if any)
+    "tests/bdd/steps/**/*.ts",
+    "tests/bdd/steps/**/*.js",
+    "tests/bdd/steps/_step_group/*.ts",
+    "playq/addons/**/*.ts",
+    // Core PlayQ step defs from installed package (ensure node_modules is indexed)
+    "node_modules/@playq/core/src/helper/actions/**/*.ts"
+  ],
+
+  "cucumber.parameterTypes": [
+    {
+      "name": "param",
+      "regexp": "\".*?\""
+    }
+  ],
+
+  // Optional: turn off publishing to Cucumber Reports
+  "cucumber.publish": false,
+
+  // Optional: enable snippet generation for undefined steps
+  "cucumber.snippets": true,
+
+  // Optional: control the output format
+  "cucumber.format": ["html:cucumber-report.html"],
+
+  // // --- VS Code Cucumber (Gherkin) Autocomplete plugin (alexkrechik.cucumberautocomplete) ---
+  // // Sync and index .feature files
+  // "cucumberautocomplete.syncfeatures": "test/features/**/*.feature",
+  // // Where to look for step definitions (project + core package + sibling core workspace)
+  // "cucumberautocomplete.steps": [
+  //   "test/steps/**/*.ts",
+  //   "test/steps/**/*.js",
+  //   "extend/addons/**/*.ts",
+  //   "node_modules/@playq/core/src/helper/actions/**/*.ts",
+  //   "/Users/renish.kozhithottathil/Documents/_FRAMEWORK/PlayQ/PlayQ_NPM_V2/src/helper/actions/**/*.ts"
+  // ],
+  // // Do not skip node_modules so steps bundled with @playq/core are discovered
+  // "cucumberautocomplete.skipNodeModules": false,
+  // // Support custom Cucumber parameter type used by PlayQ core ({param})
+  // "cucumberautocomplete.customParameters": [
+  //   { "parameter": "{param}", "regexp": ".*" }
+  // ],
+  // // Quality-of-life
+  // "cucumberautocomplete.includeGherkinAutocomplete": true,
+  // "cucumberautocomplete.strictGherkinCompletion": false,
+  // "cucumberautocomplete.onTypeFormat": true,
+  // Ensure .feature files use the language id that the official Cucumber extension registers ("feature")
+  "files.associations": {
+    "*.feature": "cucumber"
+  },
+
+  "liveServer.settings.port": 5501
+}
+
+// {
+//   // Location of all your .feature files
+//   "cucumber.features": [
+//     "test/features/**/*.feature",
+//     "test/step_group/*.sg.feature"
+//   ],
+
+//   // Locations where step definitions are found
+//   "cucumber.glue": ["test/steps/**/*.ts", "src/helper/actions/*.ts", "extend/addons/**/*.ts"],
+//   "cucumber.parameterTypes": [
+//     {
+//       "name": "param",
+//       "regexp": "\".*?\""
+//     }
+//   ],
+//   // "files.associations": {
+//   //   "*.feature": "gherkin"
+//   // },
+
+//   // Optional: turn off publishing to Cucumber Reports
+//   "cucumber.publish": false,
+
+//   // Optional: enable snippet generation for undefined steps
+//   "cucumber.snippets": true,
+
+//   // Optional: control the output format
+//   "cucumber.format": [
+//     "html:cucumber-report.html"
+//   ],
+//   "liveServer.settings.port": 5501
+// }

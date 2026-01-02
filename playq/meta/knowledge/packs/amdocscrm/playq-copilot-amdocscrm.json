@@ -1,0 +1,302 @@
+{
+  "domain": "AmdocsCRM",
+  "category": "Amdocs Customer Relationship Management Automation",
+  "description": "Comprehensive knowledge base of PlayQ AmdocsCRM automation commands with syntax, description, and examples for CoPilot-assisted test case authoring.",
+  "commands": [
+    {
+      "name": "Login using Microsoft SSO",
+      "syntax": "AmdocsCRM: Login using Microsoft SSO -sessionName:{string} -url:{string} -username:{string} -password:{string} -options:{string}",
+      "category": "Session",
+      "description": "Logs into Amdocs CRM web application using Microsoft SSO credentials and initiates a PlayQ session.",
+      "example": "* AmdocsCRM: Login using Microsoft SSO -sessionName:\"demoAmdocsCRM\" -url:\"#{env.url}\" -username:\"#{env.crm_user}\" -password:\"#{env.crm_password}\" -options:\"{ mfa: true }\""
+    },
+    {
+      "name": "Logout",
+      "syntax": "AmdocsCRM: Logout -Options:{string}",
+      "category": "Session",
+      "description": "Logs out from the current Amdocs CRM session and closes the active browser instance.",
+      "example": "* AmdocsCRM: Logout -Options:\"\""
+    },
+
+    {
+      "name": "Input Text",
+      "syntax": "AmdocsCRM: Input Text -Field:{string} -Text:{string} -Options:{string}",
+      "category": "Input",
+      "description": "Inputs text into a specified Amdocs CRM field identified by label or name.",
+      "example": "* AmdocsCRM: Input Text -Field:\"Customer Name\" -Text:\"John Smith\" -Options:\"\""
+    },
+    {
+      "name": "Input Date",
+      "syntax": "AmdocsCRM: Input Date -Field:{string} -Text:{string} -Options:{string}",
+      "category": "Input",
+      "description": "Sets the date value in a calendar picker or input box.",
+      "example": "* AmdocsCRM: Input Date -Field:\"Activation Date\" -Text:\"15/11/2025\" -Options:\"\""
+    },
+    {
+      "name": "Input Time",
+      "syntax": "AmdocsCRM: Input Time -Field:{string} -Text:{string} -Options:{string}",
+      "category": "Input",
+      "description": "Fills a time field (HH:MM AM/PM format).",
+      "example": "* AmdocsCRM: Input Time -Field:\"Start Time\" -Text:\"09:00 AM\" -Options:\"\""
+    },
+    {
+      "name": "Input Lookup",
+      "syntax": "AmdocsCRM: Input Lookup -Field:{string} -Text:{string} -Options:{string}",
+      "category": "Input",
+      "description": "Searches and selects a record from a lookup dialog (e.g., Account, Owner, Queue).",
+      "example": "* AmdocsCRM: Input Lookup -Field:\"Account\" -Text:\"Acme Telecom\" -Options:\"\""
+    },
+    {
+      "name": "Input Lookup If Empty",
+      "syntax": "AmdocsCRM: Input Lookup If Empty -Field:{string} -Text:{string} -Options:{string}",
+      "category": "Input",
+      "description": "Sets lookup value only if no existing record is present.",
+      "example": "* AmdocsCRM: Input Lookup If Empty -Field:\"Owner\" -Text:\"System Admin\" -Options:\"\""
+    },
+    {
+      "name": "Input Dropdown",
+      "syntax": "AmdocsCRM: Input Dropdown -Field:{string} -Text:{string} -Options:{string}",
+      "category": "Input",
+      "description": "Selects a value from a dropdown or combo list.",
+      "example": "* AmdocsCRM: Input Dropdown -Field:\"Priority\" -Text:\"High\" -Options:\"\""
+    },
+    {
+      "name": "Input Checkbox",
+      "syntax": "AmdocsCRM: Input Checkbox -Field:{string} -Value:{string} -Options:{string}",
+      "category": "Input",
+      "description": "Toggles a checkbox to true or false.",
+      "example": "* AmdocsCRM: Input Checkbox -Field:\"Billable\" -Value:\"true\" -Options:\"\""
+    },
+
+    {
+      "name": "Click Button",
+      "syntax": "AmdocsCRM: Click Button -Text:{string} -Options:{string}",
+      "category": "Click",
+      "description": "Clicks a button or toolbar action by its visible text or aria-label.",
+      "example": "* AmdocsCRM: Click Button -Text:\"Save\" -Options:\"\""
+    },
+    {
+      "name": "Click Tab",
+      "syntax": "AmdocsCRM: Click Tab -Text:{string} -Options:{string}",
+      "category": "Navigation",
+      "description": "Switches between form tabs such as Customer Details, Service Details, or Billing.",
+      "example": "* AmdocsCRM: Click Tab -Text:\"Service Details\" -Options:\"\""
+    },
+    {
+      "name": "Click Link",
+      "syntax": "AmdocsCRM: Click Link -Text:{string} -Options:{string}",
+      "category": "Navigation",
+      "description": "Clicks a hyperlink or linked record on the page.",
+      "example": "* AmdocsCRM: Click Link -Text:\"Case #10452\" -Options:\"\""
+    },
+    {
+      "name": "Click Left Menu",
+      "syntax": "AmdocsCRM: Click Left Menu -Text:{string}",
+      "category": "Navigation",
+      "description": "Navigates to a section via the left menu (e.g., Customer 360, Service).",
+      "example": "* AmdocsCRM: Click Left Menu -Text:\"Customer 360\""
+    },
+    {
+      "name": "Click Left Menu Then Sub Menu",
+      "syntax": "AmdocsCRM: Click Left Menu -Text:{string} -Then Sub Menu -Text:{string}",
+      "category": "Navigation",
+      "description": "Opens a submenu item within the left navigation tree.",
+      "example": "* AmdocsCRM: Click Left Menu -Text:\"Customer\" -Then Sub Menu -Text:\"Service Requests\""
+    },
+    {
+      "name": "Click Dialog Button",
+      "syntax": "AmdocsCRM: Click Dialog Button -Text:{string} -Options:{string}",
+      "category": "Click",
+      "description": "Clicks confirm or cancel in pop-up dialogs.",
+      "example": "* AmdocsCRM: Click Dialog Button -Text:\"Confirm\" -Options:\"\""
+    },
+
+    {
+      "name": "Table Input Filter",
+      "syntax": "AmdocsCRM: Table Input Filter -Text:{string} -Options:{string}",
+      "category": "Table",
+      "description": "Filters a data table or grid based on provided text.",
+      "example": "* AmdocsCRM: Table Input Filter -Text:\"MSISDN\" -Options:\"\""
+    },
+    {
+      "name": "Table Row Select",
+      "syntax": "AmdocsCRM: Table Row Select -Row:{string} -Options:{string}",
+      "category": "Table",
+      "description": "Selects a table row by index or matching text.",
+      "example": "* AmdocsCRM: Table Row Select -Row:\"1\" -Options:\"\""
+    },
+    {
+      "name": "Verify Table Cell Value Contains",
+      "syntax": "AmdocsCRM: Verify Table Cell Value Contains -Text:{string} -Row:{string} -Column:{string} -Options:{string}",
+      "category": "Verify",
+      "description": "Checks if a table cell contains the expected substring.",
+      "example": "* AmdocsCRM: Verify Table Cell Value Contains -Text:\"Active\" -Row:\"1\" -Column:\"Status\" -Options:\"\""
+    },
+    {
+      "name": "Store Table Row Count",
+      "syntax": "AmdocsCRM: Store Table Row Count -To Variable:{string} -Options:{string}",
+      "category": "Store",
+      "description": "Stores the total number of table rows into a variable.",
+      "example": "* AmdocsCRM: Store Table Row Count -To Variable:\"rowCount\" -Options:\"\""
+    },
+
+    {
+      "name": "Wait For Loader To Disappear",
+      "syntax": "AmdocsCRM: Wait For Loader To Disappear -Options:{string}",
+      "category": "Wait",
+      "description": "Waits for the Amdocs loader/spinner element to vanish before continuing.",
+      "example": "* AmdocsCRM: Wait For Loader To Disappear -Options:\"timeout=10s\""
+    },
+    {
+      "name": "Wait And Verify Page Header",
+      "syntax": "AmdocsCRM: Wait And Verify Page Header -Text:{string} -Options:{string}",
+      "category": "Wait",
+      "description": "Waits until the specified header text appears on the page.",
+      "example": "* AmdocsCRM: Wait And Verify Page Header -Text:\"Customer Overview\" -Options:\"\""
+    },
+    {
+      "name": "Verify Input Value",
+      "syntax": "AmdocsCRM: Verify Input Value -Field:{string} -Text:{string} -Options:{string}",
+      "category": "Verify",
+      "description": "Validates that a form field displays the expected text value.",
+      "example": "* AmdocsCRM: Verify Input Value -Field:\"Customer Name\" -Text:\"John Smith\" -Options:\"\""
+    },
+    {
+      "name": "Verify Notification",
+      "syntax": "AmdocsCRM: Verify Notification -Text:{string} -Options:{string}",
+      "category": "Verify",
+      "description": "Checks that a notification or toast message appears with matching text.",
+      "example": "* AmdocsCRM: Verify Notification -Text:\"Record saved successfully\" -Options:\"{partialMatch:true}\""
+    },
+
+    {
+      "name": "Create Service Request",
+      "syntax": "AmdocsCRM: Create Service Request -Category:{string} -Description:{string} -Queue:{string} -Options:{string}",
+      "category": "Workflow",
+      "description": "Creates a new Service Request record under the current customer profile.",
+      "example": "* AmdocsCRM: Create Service Request -Category:\"Billing\" -Description:\"Invoice not received\" -Queue:\"Finance\" -Options:\"\""
+    },
+    {
+      "name": "Assign Service Request",
+      "syntax": "AmdocsCRM: Assign Service Request -To:{string} -Options:{string}",
+      "category": "Workflow",
+      "description": "Assigns an SR to a queue or CSR for resolution.",
+      "example": "* AmdocsCRM: Assign Service Request -To:\"Tier 1 Support\" -Options:\"\""
+    },
+    {
+      "name": "Change Service Request Status",
+      "syntax": "AmdocsCRM: Change Service Request Status -To:{string} -Options:{string}",
+      "category": "Workflow",
+      "description": "Updates SR status (e.g., Open → Resolved).",
+      "example": "* AmdocsCRM: Change Service Request Status -To:\"Resolved\" -Options:\"\""
+    },
+    {
+      "name": "Approve Service Request",
+      "syntax": "AmdocsCRM: Approve Service Request -Text:{string} -Options:{string}",
+      "category": "Workflow",
+      "description": "Approves a pending SR workflow step.",
+      "example": "* AmdocsCRM: Approve Service Request -Text:\"Approve SR\" -Options:\"\""
+    },
+
+    {
+      "name": "Suspend Service",
+      "syntax": "AmdocsCRM: Click Button -Text:\"Suspend Service\" -Options:{string}",
+      "category": "Telecom",
+      "description": "Suspends a customer's active service in the Service Details tab.",
+      "example": "* AmdocsCRM: Click Button -Text:\"Suspend Service\" -Options:\"\""
+    },
+    {
+      "name": "Resume Service",
+      "syntax": "AmdocsCRM: Click Button -Text:\"Resume Service\" -Options:{string}",
+      "category": "Telecom",
+      "description": "Resumes a previously suspended service.",
+      "example": "* AmdocsCRM: Click Button -Text:\"Resume Service\" -Options:\"\""
+    },
+    {
+      "name": "Link Billing Account",
+      "syntax": "AmdocsCRM: Link Billing Account -Field:{string} -Text:{string} -Options:{string}",
+      "category": "Telecom",
+      "description": "Links a CRM customer to an ICCBS billing account.",
+      "example": "* AmdocsCRM: Link Billing Account -Field:\"Billing Account Number\" -Text:\"BA123456789\" -Options:\"\""
+    },
+    {
+      "name": "Activate Service",
+      "syntax": "AmdocsCRM: Click Button -Text:\"Activate Service\" -Options:{string}",
+      "category": "Telecom",
+      "description": "Activates a pending or suspended customer service.",
+      "example": "* AmdocsCRM: Click Button -Text:\"Activate Service\" -Options:\"\""
+    },
+    {
+      "name": "Disconnect Service",
+      "syntax": "AmdocsCRM: Click Button -Text:\"Disconnect Service\" -Options:{string}",
+      "category": "Telecom",
+      "description": "Disconnects a customer's line or broadband service.",
+      "example": "* AmdocsCRM: Click Button -Text:\"Disconnect Service\" -Options:\"\""
+    },
+
+    {
+      "name": "Assign Input Value To Variable",
+      "syntax": "AmdocsCRM: Assign Input Value To Variable -Field:{string} -To Variable:{string} -Options:{string}",
+      "category": "Store",
+      "description": "Extracts a field value and assigns it to a variable.",
+      "example": "* AmdocsCRM: Assign Input Value To Variable -Field:\"Customer ID\" -To Variable:\"custId\" -Options:\"\""
+    },
+    {
+      "name": "Assign Table Cell Value To Variable",
+      "syntax": "AmdocsCRM: Assign Table Cell Value To Variable -Row:{string} -Column:{string} -To Variable:{string} -Options:{string}",
+      "category": "Store",
+      "description": "Stores a specific table cell value for reuse in later steps.",
+      "example": "* AmdocsCRM: Assign Table Cell Value To Variable -Row:\"1\" -Column:\"MSISDN\" -To Variable:\"phoneNo\" -Options:\"\""
+    },
+
+    {
+      "name": "Refresh Page",
+      "syntax": "AmdocsCRM: Refresh Page -Options:{string}",
+      "category": "Utility",
+      "description": "Reloads the current CRM page or form.",
+      "example": "* AmdocsCRM: Refresh Page -Options:\"\""
+    },
+    {
+      "name": "Scroll",
+      "syntax": "AmdocsCRM: Scroll -Value:{string} -From Visible Field:{string} -Options:{string}",
+      "category": "Utility",
+      "description": "Scrolls vertically relative to a visible field.",
+      "example": "* AmdocsCRM: Scroll -Value:\"300\" -From Visible Field:\"Customer Name\" -Options:\"\""
+    },
+    {
+      "name": "Upload File",
+      "syntax": "AmdocsCRM: Upload File -Filename:{string} -Options:{string}",
+      "category": "Utility",
+      "description": "Uploads a file or document attachment to the record.",
+      "example": "* AmdocsCRM: Upload File -Filename:\"contract.pdf\" -Options:\"\""
+    },
+    {
+      "name": "Download File",
+      "syntax": "AmdocsCRM: Download File -Filename:{string} -Options:{string}",
+      "category": "Utility",
+      "description": "Downloads a linked or attached file from CRM.",
+      "example": "* AmdocsCRM: Download File -Filename:\"invoice.pdf\" -Options:\"\""
+    },
+    {
+      "name": "Capture Screenshot",
+      "syntax": "AmdocsCRM: Capture Screenshot -Filename:{string} -Options:{string}",
+      "category": "Utility",
+      "description": "Captures a screenshot of the current page or form for debugging and reporting.",
+      "example": "* AmdocsCRM: Capture Screenshot -Filename:\"CustomerOverview.png\" -Options:\"\""
+    },
+    {
+      "name": "Store Session Variable",
+      "syntax": "AmdocsCRM: Store Session Variable -Name:{string} -Value:{string}",
+      "category": "Utility",
+      "description": "Stores a runtime session variable for reuse across steps.",
+      "example": "* AmdocsCRM: Store Session Variable -Name:\"lastSR\" -Value:\"SR1023\""
+    },
+    {
+      "name": "Wait",
+      "syntax": "AmdocsCRM: Wait -Options:{string}",
+      "category": "Utility",
+      "description": "Introduces an explicit wait or delay (e.g., timeout=5s).",
+      "example": "* AmdocsCRM: Wait -Options:\"timeout=5s\""
+    }
+  ]
+}

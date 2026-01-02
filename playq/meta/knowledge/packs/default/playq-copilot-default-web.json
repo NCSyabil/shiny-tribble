@@ -1,0 +1,168 @@
+{
+  "domain": "PlayQ-Web",
+  "category": "PlayQ Web Automation",
+  "description": "Knowledge base of PlayQ default Web automation commands (core, non-addon) with syntax, description, and examples for Copilot-assisted test authoring.",
+  "commands": [
+    {
+      "name": "Open Browser",
+      "syntax": "Web: Open browser -url:{string} -options:{json}",
+      "category": "Navigation",
+      "description": "Launches a browser and opens the specified URL. Options may include browserType and headless.",
+      "example": "* Web: Open browser -url:\"https://example.com\" -options:\"{\\\"browserType\\\":\\\"chromium\\\",\\\"headless\\\":true}\""
+    },
+    {
+      "name": "Navigate By Path",
+      "syntax": "Web: Navigate by path -relativePath:{string} -options:{json}",
+      "category": "Navigation",
+      "description": "Navigates to a relative path from the current base URL. Options can enable screenshots.",
+      "example": "* Web: Navigate by path -relativePath:\"/dashboard\" -options:\"{\\\"screenshot\\\":true}\""
+    },
+    {
+      "name": "Click Button",
+      "syntax": "Web: Click button -field:{string} -options:{json}",
+      "category": "Input",
+      "description": "Clicks a button located by label, text, aria-label, or custom locator metadata.",
+      "example": "* Web: Click button -field:\"Submit\" -options:\"{}\""
+    },
+    {
+      "name": "Click Link",
+      "syntax": "Web: Click link -field:{string} -options:{json}",
+      "category": "Input",
+      "description": "Clicks a hyperlink using visible text or locator hints.",
+      "example": "* Web: Click link -field:\"Forgot Password\" -options:\"{}\""
+    },
+    {
+      "name": "Click Radio Button",
+      "syntax": "Web: Click radio button -field:{string} -options:{json}",
+      "category": "Input",
+      "description": "Selects a radio button by label or value.",
+      "example": "* Web: Click radio button -field:\"Priority High\" -options:\"{}\""
+    },
+    {
+      "name": "Click Checkbox",
+      "syntax": "Web: Click checkbox -field:{string} -options:{json}",
+      "category": "Input",
+      "description": "Toggles a checkbox by label or name.",
+      "example": "* Web: Click checkbox -field:\"Accept Terms\" -options:\"{}\""
+    },
+    {
+      "name": "Mouseover Link",
+      "syntax": "Web: Mouseover on link -field:{string} -options:{json}",
+      "category": "Input",
+      "description": "Hovers the mouse over a link element.",
+      "example": "* Web: Mouseover on link -field:\"Settings\" -options:\"{}\""
+    },
+    {
+      "name": "Fill Input",
+      "syntax": "Web: Fill input -field:{string} -value:{string} -options:{json}",
+      "category": "Input",
+      "description": "Clears and types a value into an input element.",
+      "example": "* Web: Fill input -field:\"Username\" -value:\"tester01\" -options:\"{}\""
+    },
+    {
+      "name": "Fill Generic",
+      "syntax": "Web: Fill -field:{string} -value:{string} -options:{json}",
+      "category": "Input",
+      "description": "Fills any editable element with the provided value.",
+      "example": "* Web: Fill -field:\"Comment\" -value:\"Looks good\" -options:\"{}\""
+    },
+    {
+      "name": "Verify Header Text",
+      "syntax": "Web: Verify header -text:{string} -options:{json}",
+      "category": "Verification",
+      "description": "Verifies a page header matches expected text.",
+      "example": "* Web: Verify header -text:\"Dashboard\" -options:\"{}\""
+    },
+    {
+      "name": "Verify Page Title",
+      "syntax": "Web: Verify page title -text:{string} -options:{json}",
+      "category": "Verification",
+      "description": "Checks the browser tab title equals expected text.",
+      "example": "* Web: Verify page title -text:\"PlayQ Portal\" -options:\"{}\""
+    },
+    {
+      "name": "Wait For Input State",
+      "syntax": "Web: Wait for Input -field:{string} -state:{enabled|disabled} -options:{json}",
+      "category": "Wait",
+      "description": "Waits until an input becomes enabled or disabled.",
+      "example": "* Web: Wait for Input -field:\"Email\" -state:\"enabled\" -options:\"{}\""
+    },
+    {
+      "name": "Wait For Text At Location",
+      "syntax": "Web: Wait for Text at Location -field:{string} -text:{string} -options:{json}",
+      "category": "Wait",
+      "description": "Waits until text appears at the specified locator.",
+      "example": "* Web: Wait for Text at Location -field:\"#status\" -text:\"Completed\" -options:\"{}\""
+    },
+    {
+      "name": "Click Tab",
+      "syntax": "Web: Click tab -field:{string} -options:{json}",
+      "category": "Navigation",
+      "description": "Activates a tab by its label.",
+      "example": "* Web: Click tab -field:\"Details\" -options:\"{}\""
+    },
+    {
+      "name": "Select Dropdown",
+      "syntax": "Web: Select Dropdown -field:{string} -value:{string} -options:{json}",
+      "category": "Input",
+      "description": "Selects a dropdown option by visible text or value.",
+      "example": "* Web: Select Dropdown -field:\"Country\" -value:\"Canada\" -options:\"{}\""
+    },
+    {
+      "name": "Verify Text On Page",
+      "syntax": "Web: Verify text on page -text:{string} -options:{json}",
+      "category": "Verification",
+      "description": "Checks that the given text exists anywhere on the page.",
+      "example": "* Web: Verify text on page -text:\"Welcome\" -options:\"{}\""
+    },
+    {
+      "name": "Verify Text At Location",
+      "syntax": "Web: Verify text at location -field:{string} -value:{string} -options:{json}",
+      "category": "Verification",
+      "description": "Verifies text content of a specific locator matches expected value.",
+      "example": "* Web: Verify text at location -field:\"#result\" -value:\"Success\" -options:\"{}\""
+    },
+    {
+      "name": "Verify Input Field Present",
+      "syntax": "Web: Verify input field is present -field:{string} -options:{json}",
+      "category": "Verification",
+      "description": "Asserts that an input element is present on the page.",
+      "example": "* Web: Verify input field is present -field:\"Search\" -options:\"{}\""
+    },
+    {
+      "name": "Verify Input Field Value",
+      "syntax": "Web: Verify input field value -field:{string} -value:{string} -options:{json}",
+      "category": "Verification",
+      "description": "Checks an input's current value matches expected.",
+      "example": "* Web: Verify input field value -field:\"Username\" -value:\"tester01\" -options:\"{}\""
+    },
+    {
+      "name": "Verify Tab Field Present",
+      "syntax": "Web: Verify Tab field Present -field:{string} -options:{json}",
+      "category": "Verification",
+      "description": "Confirms a tab element is visible.",
+      "example": "* Web: Verify Tab field Present -field:\"History\" -options:\"{}\""
+    },
+    {
+      "name": "Verify Toast Text Contains",
+      "syntax": "Web: Verify toast text contains -text:{string} -options:{json}",
+      "category": "Verification",
+      "description": "Verifies a toast/notification contains expected substring.",
+      "example": "* Web: Verify toast text contains -text:\"Saved\" -options:\"{}\""
+    },
+    {
+      "name": "Wait For URL",
+      "syntax": "Web: Wait for URL -url:{string} -options:{json}",
+      "category": "Wait",
+      "description": "Waits until the current URL matches expected.",
+      "example": "* Web: Wait for URL -url:\"https://example.com/dashboard\" -options:\"{}\""
+    },
+    {
+      "name": "Press Key",
+      "syntax": "Web: Press Key -key:{string} -options:{json}",
+      "category": "Input",
+      "description": "Presses a keyboard key against the active element.",
+      "example": "* Web: Press Key -key:\"Enter\" -options:\"{}\""
+    }
+  ]
+}

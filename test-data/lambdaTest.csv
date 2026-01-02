@@ -1,0 +1,5 @@
+_ENV,_STATUS,fName,lName,age
+DEV,true,Matt,#{faker.person.fullName()},2
+DEV,true,Jason,#{faker.custom.nric.generate()},10
+DEV,false,#{faker.person.firstName()},#{faker.person.lastName()},4
+SIT,true,testuser3,testpassword3,3

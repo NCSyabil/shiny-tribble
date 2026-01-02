@@ -1,0 +1,98 @@
+{
+  "domain": "PlayQ-Comm",
+  "category": "PlayQ Common Automation",
+  "description": "Knowledge base of PlayQ default Comm (common/utility) automation commands with syntax, description, and examples for Copilot-assisted test authoring.",
+  "commands": [
+    {
+      "name": "Wait In Milli Seconds",
+      "syntax": "Comm: Wait-In-Milli-Seconds -seconds:{number}",
+      "category": "Utility",
+      "description": "Pauses execution for the provided milliseconds.",
+      "example": "* Comm: Wait-In-Milli-Seconds -seconds:\"1500\""
+    },
+    {
+      "name": "Comment",
+      "syntax": "Comm: Comment -text:{string}",
+      "category": "Utility",
+      "description": "Adds a free-form comment to the test log/report.",
+      "example": "* Comm: Comment -text:\"Starting login sequence\""
+    },
+    {
+      "name": "Store Value",
+      "syntax": "Comm: Store -value:{string} in -variable:{string}",
+      "category": "State",
+      "description": "Stores a literal value into a named variable.",
+      "example": "* Comm: Store -value:\"ABC123\" in -variable:\"sessionId\""
+    },
+    {
+      "name": "Encrypt Password",
+      "syntax": "Comm: Encrypt-Password -text:{string} -options:{json}",
+      "category": "Security",
+      "description": "Encrypts password text. Options can control storage or masking.",
+      "example": "* Comm: Encrypt-Password -text:\"P@ssw0rd\" -options:\"{}\""
+    },
+    {
+      "name": "Encrypt Text",
+      "syntax": "Comm: Encrypt-Text -text:{string} -options:{json}",
+      "category": "Security",
+      "description": "Encrypts arbitrary text content.",
+      "example": "* Comm: Encrypt-Text -text:\"secret\" -options:\"{}\""
+    },
+    {
+      "name": "Encrypt Password And Store",
+      "syntax": "Comm: Encrypt-Password -text:{string} and store in -variable:{string} -options:{json}",
+      "category": "Security",
+      "description": "Encrypts password and saves encrypted value to a variable.",
+      "example": "* Comm: Encrypt-Password -text:\"P@ssw0rd\" and store in -variable:\"encPwd\" -options:\"{}\""
+    },
+    {
+      "name": "Encrypt Text And Store",
+      "syntax": "Comm: Encrypt -text:{string} and store in -variable:{string} -options:{json}",
+      "category": "Security",
+      "description": "Encrypts text and saves result to a variable.",
+      "example": "* Comm: Encrypt -text:\"token-raw\" and store in -variable:\"encToken\" -options:\"{}\""
+    },
+    {
+      "name": "Decrypt And Store",
+      "syntax": "Comm: Decrypt -text:{string} and store in -variable:{string} -options:{json}",
+      "category": "Security",
+      "description": "Decrypts encrypted text and stores plaintext value.",
+      "example": "* Comm: Decrypt -text:\"<cipher>\" and store in -variable:\"plainToken\" -options:\"{}\""
+    },
+    {
+      "name": "Get Random From List",
+      "syntax": "Comm: Get-Random-From-List -arrayList:{jsonArray}",
+      "category": "Utility",
+      "description": "Selects a random element from a JSON array list.",
+      "example": "* Comm: Get-Random-From-List -arrayList:\"[\\\"A\\\",\\\"B\\\",\\\"C\\\"]\""
+    },
+    {
+      "name": "Remove Leading Zero From Date",
+      "syntax": "Comm: Remove-Leading-Zero-From-Date -text:{string}",
+      "category": "Utility",
+      "description": "Removes leading zeros from month and day portions of a date string.",
+      "example": "* Comm: Remove-Leading-Zero-From-Date -text:\"08/05/2025\""
+    },
+    {
+      "name": "Write JSON To File",
+      "syntax": "Comm: Write-JSON-To-File -filePath:{string} -data:{json} -options:{json}",
+      "category": "IO",
+      "description": "Writes JSON data to a file path.",
+      "example": "* Comm: Write-JSON-To-File -filePath:\"output/data.json\" -data:\"{\\\"id\\\":1}\" -options:\"{}\""
+    },
+    {
+      "name": "Attach Log",
+      "syntax": "Comm: Attach-Log -message:{string} -mimeType:{string} -msgType:{string}",
+      "category": "Reporting",
+      "description": "Attaches a message to the test report with MIME and message type.",
+      "example": "* Comm: Attach-Log -message:\"Step passed\" -mimeType:\"text/plain\" -msgType:\"info\""
+    },
+    {
+      "name": "Store Value With Options",
+      "syntax": "Store -value:{string} in -variable:{string} -options:{json}",
+      "category": "State",
+      "description": "Stores a value in a variable with optional processing flags.",
+      "example": "* Store -value:\"XYZ789\" in -variable:\"orderRef\" -options:\"{\\\"mask\\\":true}\""
+    }
+  ]
+}

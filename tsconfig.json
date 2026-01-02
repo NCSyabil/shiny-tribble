@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": [
+        "node_modules/@playq/core/dist/*",
+        "node_modules/@playq/core/src/*"
+      ],
+      "@helper/*": [
+        "node_modules/@playq/core/dist/helper/*",
+        "node_modules/@playq/core/src/helper/*"
+      ],
+      "@actions": ["node_modules/@playq/core/src/helper/actions/index.ts"],
+      "@config/*": [
+        "playq/config/*",
+        "config/*"
+      ],
+      "@env/*": ["environments/*"],
+      "@resources/*": ["resources/*"],
+  "@setup/playwrightTest": ["playq/config/playwright/playwright.test.ts"],
+  "@playwright-hook": ["playq/config/playwright/playwright.hooks.ts"],
+      "@global": [
+        "node_modules/@playq/core/dist/global",
+        "node_modules/@playq/core/src/global"
+      ],
+      "@playq": [
+        "node_modules/@playq/core/dist/global",
+        "node_modules/@playq/core/src/global"
+      ],
+  "@project/*": ["playq/*"],
+      "@playqloc": ["resources/locators"]
+    }
+  },
+  "include": [
+    "test",
+    "config",
+    "resources",
+    "playq"
+  ]
+}

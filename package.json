@@ -1,0 +1,23 @@
+{
+  "name": "playq-project",
+  "version": "0.2.20",
+  "private": true,
+  "scripts": {
+    "pretest": "echo TEST PRETEST",
+    "test": "playq",
+    "test:cucumber": "playq --runner cucumber"
+  },
+  "dependencies": {
+    "@playq/core": "file:playq-core-0.2.48.tgz"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.1.0",
+    "@playwright/test": "^1.53.1",
+    "allure-commandline": "^2.25.0",
+    "allure-playwright": "^3.3.0",
+    "fs-extra": "^11.3.2",
+    "playwright": "^1.53.1",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0"
+  }
+}

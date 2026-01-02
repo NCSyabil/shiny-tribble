@@ -1,0 +1,10 @@
+[
+  {
+    "name": "d365Crm",
+    "description": "Microsoft Dynamics 365 CRM Addon"
+  },
+  {
+    "name": "powerBi",
+    "description": "Microsoft Power BI Addon"
+  }
+]
